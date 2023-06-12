@@ -1,0 +1,186 @@
+body {
+  margin: 0 auto;
+  font-family: sans-serif;
+  background-image: url(clouds.jpg);
+  background-size: 1600px;
+  background-position: center;
+}
+.boxaround {
+  width: 805px;
+  border: 3px solid rgb(27, 27, 100);
+  margin: 0 auto;
+  border-radius: 12px;
+  background: linear-gradient(-225deg, #5d9fff 0%, #b8dcff 48%, #6bbbff 100%);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  opacity: 80%;
+}
+
+header {
+  font-size: 44px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 1px 2px #437ddf;
+  text-decoration: underline;
+  opacity: 100%;
+}
+header:hover {
+  background-color: #437ddf;
+  border-radius: 30px;
+  transition: all 200ms ease-in-out;
+  cursor: default;
+}
+
+.around {
+  margin: 0 auto;
+}
+.datetime {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+}
+.datetime:hover {
+  opacity: 80%;
+}
+.datetimeheader {
+  padding: 10px;
+  font-size: 16px;
+}
+.datetimeform {
+  padding-bottom: 12px;
+  padding-left: 10px;
+}
+.sun-cloud-icon {
+  font-size: 60px;
+  color: red;
+  margin: 10px 30px 0px 0px;
+  transition: all 200ms ease-in-out;
+  padding-left: 60px;
+  text-shadow: 1px 1px #07162f;
+}
+.sun-cloud-icon:hover {
+  opacity: 50%;
+}
+
+.localtemperture {
+  display: block;
+  border: 2px solid rgb(27, 27, 100);
+  border-radius: 50px;
+  padding: 15px;
+  margin-top: 8px;
+  font-size: 40px;
+  margin-left: 80px;
+  background-color: #a7c2f5;
+  transition: all 200ms ease-in-out;
+  text-shadow: 1px 1px #437ddf;
+  box-shadow: 1px 2px #437ddf;
+}
+.localtemperture:hover {
+  background-color: #437ddf;
+  color: #ffff;
+  cursor: default;
+}
+
+.tempUnit {
+  text-align: center;
+  margin-left: 105px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.degree {
+  transition: all 200ms ease-in-out;
+  border: none;
+  background-color: transparent;
+}
+.degree:hover {
+  color: #ffff;
+  cursor: pointer;
+}
+.fahrenheit {
+  transition: all 200ms ease-in-out;
+  border: none;
+  background-color: transparent;
+}
+.fahrenheit:hover {
+  color: #ffff;
+  cursor: pointer;
+}
+.localcity {
+  font-size: 40px;
+  display: block;
+  margin-top: 12px;
+  transition: all 200ms ease-in-out;
+  text-shadow: 1px 1px #437ddf;
+}
+.localcity:hover {
+  color: #437ddf;
+  cursor: pointer;
+}
+.p-3 form {
+  font-size: 20px;
+  margin: 10px 60px 0px 0px;
+  text-align: center;
+  border: 3px solid rgb(27, 27, 100);
+  border-radius: 8px;
+  background-color: transparent;
+  display: block;
+}
+
+.citysearch:hover {
+  opacity: 80%;
+}
+.searchbutton {
+  padding-left: 88px;
+  padding-right: 88px;
+  background-color: transparent;
+  border-right: none;
+  border-left: none;
+}
+.searchbutton:hover {
+  background-color: #5d9fff;
+}
+.location {
+  margin: 0px 0px 0px 85px;
+  display: block;
+  border-radius: 8px;
+  border: 3px solid rgb(27, 27, 100);
+  background-color: transparent;
+}
+.location:hover {
+  background-color: #5d9fff;
+}
+.weekdays {
+  display: grid;
+  grid-template-columns: 160px 160px 160px 160px 160px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.days {
+  font-size: 50px;
+  padding: 20px;
+  transition: all 200ms ease-in-out;
+  text-shadow: 1px 1px #07162f;
+}
+.days:hover {
+  opacity: 70%;
+}
+.monday,
+.tuesday,
+.wednesday,
+.thursday,
+.friday {
+  font-size: 20px;
+  text-shadow: 1px 1px #437ddf;
+  transition: all 200ms ease-in-out;
+}
+.monday:hover,
+.tuesday:hover,
+.wednesday:hover,
+.thursday:hover,
+.friday:hover {
+  background-color: #6bbbff;
+  border-radius: 30px;
+}
