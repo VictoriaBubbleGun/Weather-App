@@ -184,3 +184,12 @@ header:hover {
   background-color: #6bbbff;
   border-radius: 30px;
 }
+.codedBy {
+  font-weight: 800;
+  text-align: center;
+  margin-top: -20px;
+}
+.codedByLink {
+  text-decoration: none;
+  color: yellow;
+}
