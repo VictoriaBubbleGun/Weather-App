@@ -6,7 +6,7 @@ body {
   background-position: center;
 }
 .boxaround {
-  width: 805px;
+  max-width: 800px;
   border: 3px solid rgb(27, 27, 100);
   margin: 0 auto;
   border-radius: 12px;
@@ -62,18 +62,25 @@ header:hover {
 .sun-cloud-icon:hover {
   opacity: 50%;
 }
-
+ul {
+  text-align: end;
+  list-style-type: none;
+  padding-left: 0rem;
+  margin-bottom: 0;
+}
+li {
+  font-size: 13px;
+}
 .localtemperture {
-  display: block;
+  display: inline-block;
+  font-weight: 700;
   border: 2px solid rgb(27, 27, 100);
   border-radius: 50px;
-  padding: 15px;
+  padding: 10px;
   margin-top: 8px;
-  font-size: 40px;
-  margin-left: 80px;
+  font-size: 10px;
   background-color: #a7c2f5;
   transition: all 200ms ease-in-out;
-  text-shadow: 1px 1px #437ddf;
   box-shadow: 1px 2px #437ddf;
 }
 .localtemperture:hover {
@@ -81,7 +88,40 @@ header:hover {
   color: #ffff;
   cursor: default;
 }
-
+.humidty {
+  display: inline-block;
+  font-weight: 700;
+  border: 2px solid rgb(27, 27, 100);
+  border-radius: 50px;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 10px;
+  background-color: #a7c2f5;
+  transition: all 200ms ease-in-out;
+  box-shadow: 1px 2px #437ddf;
+}
+.humidty:hover {
+  background-color: #437ddf;
+  color: #ffff;
+  cursor: default;
+}
+.wind {
+  display: inline-block;
+  font-weight: 700;
+  border: 2px solid rgb(27, 27, 100);
+  border-radius: 50px;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 10px;
+  background-color: #a7c2f5;
+  transition: all 200ms ease-in-out;
+  box-shadow: 1px 2px #437ddf;
+}
+.wind:hover {
+  background-color: #437ddf;
+  color: #ffff;
+  cursor: default;
+}
 .tempUnit {
   text-align: center;
   margin-left: 105px;

@@ -37,34 +37,28 @@ function clock() {
 let time = document.querySelector("#timing");
 time.addEventListener("load", clock());
 
-let newTemperture = document.querySelector("#localTemperture");
-function celsiusTemperature() {
-  newTemperture.innerHTML = "30°";
-}
-let degree = document.querySelector("#degree");
-degree.addEventListener("click", celsiusTemperature);
-
-function changeDegreetoFahrenheit() {
-  let fahrenheittemp = Math.round(30 * 1.8 + 32);
-  newTemperture.innerHTML = `${fahrenheittemp}°`;
-}
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changeDegreetoFahrenheit);
-
-function showtemp(reponse) {
+function showReponse(reponse) {
   console.log(reponse);
+  let newTemperture = document.querySelector("#localTemperture");
   let temp = reponse.data.main.temp;
   let currentCity = document.querySelector("#localCity");
   let roundedtemp = Math.round(temp);
   newTemperture.innerHTML = `${roundedtemp}°`;
   let currentLocalCity = reponse.data.name;
   currentCity.innerHTML = `${currentLocalCity}`;
+  let newWind = document.querySelector("#wind");
+  let wind = reponse.data.wind.speed;
+  let roundedWind = Math.round(wind);
+  newWind.innerHTML = `${roundedWind}km`;
+  let newHumidity = document.querySelector("#humidity");
+  let humidity = reponse.data.main.humidity;
+  newHumidity.innerHTML = `${humidity}%`;
 }
 
 function showPosition(position) {
   let apiKey = "384ce7707e4353e52db5c59af61a3812";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(url).then(showtemp);
+  axios.get(url).then(showReponse);
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
@@ -80,7 +74,7 @@ function city(event) {
   console.log(cityname);
   let apiKey = "384ce7707e4353e52db5c59af61a3812";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${apiKey}&units=metric`;
-  axios.get(url).then(showtemp);
+  axios.get(url).then(showReponse);
 }
 
 let citySearch = document.querySelector("#citysearch");
