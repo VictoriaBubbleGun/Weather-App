@@ -2,7 +2,7 @@ body {
   margin: 0 auto;
   font-family: sans-serif;
   background-image: url(clouds.jpg);
-  background-size: 1600px;
+  background-size: cover;
   background-position: center;
 }
 .boxaround {
@@ -47,10 +47,7 @@ header:hover {
   padding: 10px;
   font-size: 16px;
 }
-.datetimeform {
-  padding-bottom: 12px;
-  padding-left: 10px;
-}
+
 .sun-cloud-icon {
   font-size: 60px;
   color: red;
