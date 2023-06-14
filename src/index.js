@@ -25,13 +25,19 @@ function clock() {
     "December",
   ];
   let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  time.innerHTML = `${hour}:${minutes}`;
   let currentday = days[now.getDay()];
   let currentdate = now.getDate();
   let currentmonth = months[now.getMonth()];
   let currentyear = now.getFullYear();
   let date = document.querySelector("#date");
-  time.innerHTML = `${hour}:${minutes}`;
   date.innerHTML = `${currentday}, ${currentdate}. ${currentmonth} ${currentyear}`;
 }
 let time = document.querySelector("#timing");
@@ -53,6 +59,12 @@ function showReponse(reponse) {
   let newHumidity = document.querySelector("#humidity");
   let humidity = reponse.data.temperature.humidity;
   newHumidity.innerHTML = `${humidity}%`;
+  let currentWeatherIcon = document.querySelector("#currentWeatherIcon");
+  let newcurrentWeatherIcon = reponse.data.condition.icon;
+  currentWeatherIcon.setAttribute(
+    `src`,
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${newcurrentWeatherIcon}.png`
+  );
 }
 
 function showPosition(position) {
