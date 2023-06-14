@@ -76,6 +76,8 @@ function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+window.onload = getCurrentPosition;
+
 let currentLocationButton = document.querySelector("#locationButton");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
