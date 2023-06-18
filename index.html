@@ -51,22 +51,21 @@
 
         <div class="row gx-5 flex-nowrap">
           <div class="col">
-            <div class="p-3">
-              <ul>
-                <li>
-                  Temperture
-                  <span class="localtemperture" id="localTemperture">21°</span>
-                </li>
-                <li>
-                  Humidty
-                  <span class="humidty" id="humidity">2%</span>
-                </li>
-                <li>
-                  Wind
-                  <span class="wind" id="wind">10h</span>
-                </li>
-              </ul>
-            </div>
+            <ul>
+              <li class="temp">
+                Temperture <a href="#" id="metric">C°</a> |
+                <a href="#" class="active" id="imperial"> F°</a>
+                <span class="localtemperture" id="localTemperture">21°</span>
+              </li>
+              <li>
+                Humidty %
+                <span class="humidty" id="humidity">2%</span>
+              </li>
+              <li>
+                Wind Speed km/h
+                <span class="wind" id="wind">10h</span>
+              </li>
+            </ul>
           </div>
           <div class="col">
             <div class="p-3">

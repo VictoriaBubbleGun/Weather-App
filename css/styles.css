@@ -59,15 +59,30 @@ header:hover {
 .sun-cloud-icon:hover {
   opacity: 50%;
 }
+ol,
+ul {
+  padding-left: 0rem;
+}
 ul {
   text-align: end;
   list-style-type: none;
-  padding-left: 0rem;
   margin-bottom: 0;
 }
+
 li {
   font-size: 13px;
 }
+.temp {
+  display: inline-block;
+}
+.temp .active {
+  text-decoration: none;
+  color: black;
+}
+.temp .active:hover {
+  cursor: default;
+}
+
 .localtemperture {
   display: inline-block;
   font-weight: 700;

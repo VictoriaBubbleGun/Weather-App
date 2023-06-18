@@ -43,13 +43,15 @@ function clock() {
 let time = document.querySelector("#timing");
 time.addEventListener("load", clock());
 
+let temp = null;
+
 function showReponse(reponse) {
   console.log(reponse);
   let newTemperture = document.querySelector("#localTemperture");
-  let temp = reponse.data.temperature.current;
-  let currentCity = document.querySelector("#localCity");
+  temp = reponse.data.temperature.current;
   let roundedtemp = Math.round(temp);
   newTemperture.innerHTML = `${roundedtemp}°`;
+  let currentCity = document.querySelector("#localCity");
   let currentLocalCity = reponse.data.city;
   currentCity.innerHTML = `${currentLocalCity}`;
   let newWind = document.querySelector("#wind");
@@ -85,7 +87,6 @@ function city(event) {
   event.preventDefault();
   let city = document.querySelector("#newCity");
   let cityname = city.value;
-  console.log(cityname);
   let apiKey = "c6415ot471311fe21b9018d4f7a3003e";
   let url = `https://api.shecodes.io/weather/v1/current?query=${cityname}&key=${apiKey}&units=metric`;
   axios.get(url).then(showReponse);
@@ -93,3 +94,21 @@ function city(event) {
 
 let citySearch = document.querySelector("#citysearch");
 citySearch.addEventListener("submit", city);
+
+let newTemperture = document.querySelector("#localTemperture");
+function celsiusTemperature() {
+  newTemperture.innerHTML = `${Math.round(temp)}°`;
+  fahrenheit.classList.remove("active");
+  degree.classList.add("active");
+}
+let degree = document.querySelector("#metric");
+degree.addEventListener("click", celsiusTemperature);
+
+function changeDegreetoFahrenheit() {
+  let fahrenheittemp = Math.round(temp * 1.8 + 32);
+  newTemperture.innerHTML = `${fahrenheittemp}°`;
+  fahrenheit.classList.add("active");
+  degree.classList.remove("active");
+}
+let fahrenheit = document.querySelector("#imperial");
+fahrenheit.addEventListener("click", changeDegreetoFahrenheit);
