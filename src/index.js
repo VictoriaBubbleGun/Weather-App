@@ -96,7 +96,8 @@ let citySearch = document.querySelector("#citysearch");
 citySearch.addEventListener("submit", city);
 
 let newTemperture = document.querySelector("#localTemperture");
-function celsiusTemperature() {
+function celsiusTemperature(event) {
+  event.preventDefault();
   newTemperture.innerHTML = `${Math.round(temp)}°`;
   fahrenheit.classList.remove("active");
   degree.classList.add("active");
@@ -104,7 +105,8 @@ function celsiusTemperature() {
 let degree = document.querySelector("#metric");
 degree.addEventListener("click", celsiusTemperature);
 
-function changeDegreetoFahrenheit() {
+function changeDegreetoFahrenheit(event) {
+  event.preventDefault();
   let fahrenheittemp = Math.round(temp * 1.8 + 32);
   newTemperture.innerHTML = `${fahrenheittemp}°`;
   fahrenheit.classList.add("active");
