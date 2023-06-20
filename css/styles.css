@@ -31,9 +31,6 @@ header:hover {
   cursor: default;
 }
 
-.around {
-  margin: 0 auto;
-}
 .datetime {
   margin-top: 15px;
   font-size: 15px;
@@ -83,7 +80,7 @@ li {
   cursor: default;
 }
 
-.localtemperture {
+.weather-conditions {
   display: inline-block;
   font-weight: 700;
   border: 2px solid rgb(27, 27, 100);
@@ -95,69 +92,12 @@ li {
   transition: all 200ms ease-in-out;
   box-shadow: 1px 2px #437ddf;
 }
-.localtemperture:hover {
+.weather-conditions:hover {
   background-color: #437ddf;
   color: #ffff;
   cursor: default;
 }
-.humidty {
-  display: inline-block;
-  font-weight: 700;
-  border: 2px solid rgb(27, 27, 100);
-  border-radius: 50px;
-  padding: 10px;
-  margin-top: 8px;
-  font-size: 10px;
-  background-color: #a7c2f5;
-  transition: all 200ms ease-in-out;
-  box-shadow: 1px 2px #437ddf;
-}
-.humidty:hover {
-  background-color: #437ddf;
-  color: #ffff;
-  cursor: default;
-}
-.wind {
-  display: inline-block;
-  font-weight: 700;
-  border: 2px solid rgb(27, 27, 100);
-  border-radius: 50px;
-  padding: 10px;
-  margin-top: 8px;
-  font-size: 10px;
-  background-color: #a7c2f5;
-  transition: all 200ms ease-in-out;
-  box-shadow: 1px 2px #437ddf;
-}
-.wind:hover {
-  background-color: #437ddf;
-  color: #ffff;
-  cursor: default;
-}
-.tempUnit {
-  text-align: center;
-  margin-left: 105px;
-  margin-top: 20px;
-  font-size: 20px;
-}
-.degree {
-  transition: all 200ms ease-in-out;
-  border: none;
-  background-color: transparent;
-}
-.degree:hover {
-  color: #ffff;
-  cursor: pointer;
-}
-.fahrenheit {
-  transition: all 200ms ease-in-out;
-  border: none;
-  background-color: transparent;
-}
-.fahrenheit:hover {
-  color: #ffff;
-  cursor: pointer;
-}
+
 .localcity {
   font-size: 40px;
   display: block;
@@ -219,20 +159,12 @@ li {
 .days:hover {
   opacity: 70%;
 }
-.monday,
-.tuesday,
-.wednesday,
-.thursday,
-.friday {
+.forcastDays {
   font-size: 20px;
   text-shadow: 1px 1px #437ddf;
   transition: all 200ms ease-in-out;
 }
-.monday:hover,
-.tuesday:hover,
-.wednesday:hover,
-.thursday:hover,
-.friday:hover {
+.forcastDays:hover {
   background-color: #6bbbff;
   border-radius: 30px;
 }

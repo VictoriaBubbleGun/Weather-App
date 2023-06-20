@@ -114,3 +114,24 @@ function changeDegreetoFahrenheit(event) {
 }
 let fahrenheit = document.querySelector("#imperial");
 fahrenheit.addEventListener("click", changeDegreetoFahrenheit);
+
+function displayForcast() {
+  let forcastElement = document.querySelector("#forcast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forcastHTML = "";
+  days.forEach(function (day) {
+    forcastHTML =
+      forcastHTML +
+      `
+        <span class="forcastDays">
+          ${day} <br />
+          <i class="fa-solid fa-sun days" style="color: #f7fb09"></i> <br />
+          20°
+        </span>
+      `;
+  });
+  forcastElement.innerHTML = forcastHTML;
+  console.log(forcastHTML);
+}
+
+displayForcast();

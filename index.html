@@ -53,17 +53,17 @@
           <div class="col">
             <ul>
               <li class="temp">
-                Temperture <a href="#" id="metric">C°</a> |
-                <a href="#" class="active" id="imperial"> F°</a>
-                <span class="localtemperture" id="localTemperture">21°</span>
+                Temperture <a href="#" class="active" id="metric">C°</a> |
+                <a href="#" id="imperial"> F°</a>
+                <span class="weather-conditions" id="localTemperture">21°</span>
               </li>
               <li>
                 Humidty %
-                <span class="humidty" id="humidity">2%</span>
+                <span class="weather-conditions" id="humidity">2%</span>
               </li>
               <li>
                 Wind Speed km/h
-                <span class="wind" id="wind">10h</span>
+                <span class="weather-conditions" id="wind">10h</span>
               </li>
             </ul>
           </div>
@@ -88,42 +88,7 @@
           </div>
         </div>
         <section>
-          <div class="weekdays">
-            <span class="monday">
-              Monday <br />
-              <i class="fa-solid fa-sun days" style="color: #f7fb09"></i> <br />
-              20°
-            </span>
-            <span class="tuesday"
-              >Tuesday <br />
-              <i
-                class="fa-solid fa-cloud-sun-rain days"
-                style="color: #437ddf"
-              ></i
-              ><br />
-              14°</span
-            >
-            <span class="wednesday"
-              >Wednesday <br /><i
-                class="fa-solid fa-snowflake days"
-                style="color: #8fa3c7"
-              ></i
-              ><br />5°</span
-            >
-            <span class="thursday"
-              >Thursday <br />
-              <i class="fa-solid fa-cloud-rain days" style="color: #437ddf"></i
-              ><br />
-              11°
-            </span>
-            <span class="friday"
-              >Friday <br /><i
-                class="fa-solid fa-cloud-bolt days"
-                style="color: #437ddf"
-              ></i>
-              <br />13°</span
-            >
-          </div>
+          <div class="weekdays" id="forcast"></div>
         </section>
       </div>
     </div>
