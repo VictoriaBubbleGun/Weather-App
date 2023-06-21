@@ -54,7 +54,6 @@ function showPosition(position) {
   axios.get(url).then(showReponse);
 }
 function showReponse(reponse) {
-  console.log(reponse);
   let newTemperture = document.querySelector("#localTemperture");
   temp = reponse.data.temperature.current;
   let roundedtemp = Math.round(temp);
@@ -79,16 +78,13 @@ function showReponse(reponse) {
 }
 
 function getForecast(reponse) {
-  console.log(reponse);
   let apiKey = "c6415ot471311fe21b9018d4f7a3003e";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${reponse.longitude}&lat=${reponse.latitude}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${reponse.longitude}&lat=${reponse.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast(reponse) {
-  console.log(reponse);
   let forecast = reponse.data.daily;
-  console.log(forecast);
   let forecastElement = document.querySelector("#forcast");
   let forecastHTML = "";
   forecast.forEach(function (forecastDay, index) {
@@ -111,7 +107,6 @@ function displayForecast(reponse) {
     }
   });
   forecastElement.innerHTML = forecastHTML;
-  console.log(forcastHTML);
 }
 
 function formatDay(timestamp) {
