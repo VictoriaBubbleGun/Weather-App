@@ -45,6 +45,14 @@ time.addEventListener("load", clock());
 
 let temp = null;
 
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+function showPosition(position) {
+  let apiKey = "c6415ot471311fe21b9018d4f7a3003e";
+  let url = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
+  axios.get(url).then(showReponse);
+}
 function showReponse(reponse) {
   console.log(reponse);
   let newTemperture = document.querySelector("#localTemperture");
@@ -67,15 +75,59 @@ function showReponse(reponse) {
     `src`,
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${newcurrentWeatherIcon}.png`
   );
+  getForecast(reponse.data.coordinates);
 }
 
-function showPosition(position) {
+function getForecast(reponse) {
+  console.log(reponse);
   let apiKey = "c6415ot471311fe21b9018d4f7a3003e";
-  let url = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
-  axios.get(url).then(showReponse);
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${reponse.longitude}&lat=${reponse.latitude}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
-function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(showPosition);
+
+function displayForecast(reponse) {
+  console.log(reponse);
+  let forecast = reponse.data.daily;
+  console.log(forecast);
+  let forecastElement = document.querySelector("#forcast");
+  let forecastHTML = "";
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <span class="forcastDays">
+          ${formatDay(forecastDay.time)} <br />
+          <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+            forecastDay.condition.icon
+          }.png"/> <br />
+         <span class= "temp-max"> ${Math.round(
+           forecastDay.temperature.maximum
+         )}° </span> <span class= "temp-min"> ${Math.round(
+          forecastDay.temperature.minimum
+        )}° </span>
+        </span>
+      `;
+    }
+  });
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forcastHTML);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
 }
 
 window.onload = getCurrentPosition;
@@ -114,24 +166,3 @@ function changeDegreetoFahrenheit(event) {
 }
 let fahrenheit = document.querySelector("#imperial");
 fahrenheit.addEventListener("click", changeDegreetoFahrenheit);
-
-function displayForcast() {
-  let forcastElement = document.querySelector("#forcast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  let forcastHTML = "";
-  days.forEach(function (day) {
-    forcastHTML =
-      forcastHTML +
-      `
-        <span class="forcastDays">
-          ${day} <br />
-          <i class="fa-solid fa-sun days" style="color: #f7fb09"></i> <br />
-          20°
-        </span>
-      `;
-  });
-  forcastElement.innerHTML = forcastHTML;
-  console.log(forcastHTML);
-}
-
-displayForcast();

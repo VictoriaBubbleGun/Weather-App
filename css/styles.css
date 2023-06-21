@@ -168,6 +168,9 @@ li {
   background-color: #6bbbff;
   border-radius: 30px;
 }
+.temp-min {
+  opacity: 80%;
+}
 .codedBy {
   font-weight: 800;
   text-align: center;
