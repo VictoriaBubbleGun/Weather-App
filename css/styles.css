@@ -3,10 +3,11 @@ body {
   font-family: sans-serif;
   background-image: url(clouds.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 .boxaround {
-  max-width: 800px;
+  width: 806px;
   border: 3px solid rgb(27, 27, 100);
   margin: 0 auto;
   border-radius: 12px;
